@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-secure-password-generator
+  labels:
+    app: secure-password-generator
+spec:
+  selector:
+    app: secure-password-generator
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
