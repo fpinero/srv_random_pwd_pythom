@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secure-password-generator
+  labels:
+    app: secure-password-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: secure-password-generator
+  template:
+    metadata:
+      labels:
+        app: secure-password-generator
+    spec:
+      containers:
+        - name: secure-password-generator
+          image: fpinero/secure-password-generator:0.0.1
+          ports:
+            - containerPort: 5000
